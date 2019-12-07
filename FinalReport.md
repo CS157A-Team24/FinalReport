@@ -71,7 +71,7 @@ The application provides the same functionality for all the users. Internet conn
 ### Describe each individual function, functional process and I/O:
 ### Functions
 
-####I. WITHOUT LOGING IN, USERS CAN PERFORM THESE FUNCTIONS
+#### I. WITHOUT LOGING IN, USERS CAN PERFORM THESE FUNCTIONS
 
 #### Search 
 + The users shall be able to search for posts by post's title or its content. All the posts will be dispayed when its title or content contained the words in the search box.
@@ -90,7 +90,7 @@ The application provides the same functionality for all the users. Internet conn
 
 #### View all channels
 
-####II. SIGN IN and SIGN UP FUNCTIONS
+#### II. SIGN IN and SIGN UP FUNCTIONS
 
 #### Log-in
 + Returning users must sign-in to perform the following activities: 
@@ -109,7 +109,7 @@ The application provides the same functionality for all the users. Internet conn
 + No limitation. Users can set up multiple accounts and choose which one to log-in with depending on the personal channel which users want to participate in. 
 + The system shall check if entered username is already existed. The system shall keep asking the users to enter a username until the name is available. Then, the system shall add the users' personal information into database.
 
-####III. LOG-IN IS REQUIRED FOR THESE FUNCTIONS
+#### III. LOG-IN IS REQUIRED FOR THESE FUNCTIONS
 
 #### View profile dashboard
 + Users can see all the posts and comments they have made.
