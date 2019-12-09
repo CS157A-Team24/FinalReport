@@ -28,12 +28,12 @@
   <a href="#project-description">Project Description</a> •
   <a href="#system-enviroment">System Enviroment</a> •
   <a href="#functional-requirements">Functional Requirements</a> •
-  <a href="#non-functional-issues">Non-functional Issues</a>
-  <a href="#ERD Diagram">ERD Diagram</a>
-  <a href="#normalization">Normalization Processs</a>
-  <a href="#tables">Tables</a>
-  <a href="#implementation">Implementation</a>
-  <a href="#conclusion">Project Conclusion</a>
+  <a href="#non-functional-issues">Non-functional Issues</a> •
+  <a href="#ERD Diagram">ERD Diagram</a> •
+  <a href="#normalization">Normalization Processs</a> •
+  <a href="#tables">Tables</a> •
+  <a href="#implementation">Implementation</a> •
+  <a href="#conclusion">Project Conclusion</a> •
 </p>
 
 # Project Requirements
