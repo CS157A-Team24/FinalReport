@@ -197,6 +197,47 @@ There are many design principles when it comes to web design. For our website, w
 # Project Design
 
 ### Update ERD
+INSERT PICTURE
+
+#### List all completely non-trivial FDs that apply to your design. 
+
+#### Convert ER to schemas
++ Users(​id​, email, username, password, created_at, avartar_url)
++ Posts(​id​, title, content, created_at, updated_at)
++ Comments(​id​, content, created_at, updated_at)
++ Channels(​id​, name, banner_url) 
+
++ Create_Post(​user_id​, ​post_id​, points)
++ Create_Com(​user_id​, ​com_id​,points)
++ Have(​post_id​, ​com_id​)
++ Have_Com(​parent_id​, ​child_id​)
++ Save(​user_id​, ​post_id​)
++ Vote_Post(​user_id​, ​post_id​, up_down)
++ Vote_Com(​user_id​, ​com_id​, up_down)
++ Contain(​post_id​, ​channel_id​)
++ Own(​user_id​, ​channel_id​)
++ Moderate(​user_id​, ​channel_id​)
++ Subscribe(​user_id​, ​channel_id​)
+
+#### Explanation for each entity set and relationship, write a short description in plain English of what it represents or models.
+Entity sets​:
++ Users: has ID number (PK), email, username, password, points, created_at, and avatar_url (image url). Stores user data
++ Posts: has ID number (unique), title, content, created_at, and updated_at. Stores Post data
++ Comments: has ID (PK), content, created_at, and updated_at. Stores comment data in a Post.
++ Channels: has ID (PK), name, and banner_url(image banner). Channel is also represented by unique id. Stores channel data
+
+Relationships:
++ Own: has a channel_id and user_id. Stores who owns which channels
++ Moderate: has a channel_id and user_id. Stores who moderates which channels
++ Subscribe: has a channel_id and user_id. Stores who subscribes to which channels
++ Contain: has a channel_id and post_id. Stores which channels contain which posts
++ Create_Post: has post_id, user_id, and points. Stores which posts are created by which users. Also stores the number of points a post has
++ Create_Com: has comment_id, user_id, and points. Stores which comments are created by which users. Also stores the number of points a comment has.
++ Vote_Post: has post_id, user_id, and up_down. Stores which posts are voted up or down by which users
++ Vote_Com: has comment_id, user_id, and up_down. Stores which comments are voted up or down by which users
++ Save: has user_id and post_id. Users can share a post to save it so that they can read the post again later.
++ Have: has post_id (parent) and comment_id (child). Stores which posts have which comment replies
++ Have_Com: has comment_id1 (parent) and comment_id2 (child). Stores which comments have which comment replies
 
 ### Perform the normalization process, and perfect the relational database schemas to BCNF
 
