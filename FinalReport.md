@@ -35,10 +35,10 @@
 ## Project Description
 
 ### Overview:
-The goal of this application is to create social news, rating site, and discussion website. Users can be able to check daily news, search, filter, and sort through posts. Also, users can create posts, comment on them, like, and share posts. In addition, users can create channels that will function as communities. Users can view posts without logging in, but creating posts, commenting, and liking will require the user to login. This application will allow people to easily voice their opinion or share a story. People can easily ask questions and others can answer them. It will also provide a user-friendly interface and fast response time while maintaining high throughput. 
+The goal of this application is to create a rating site and discussion website. Users can be able to search and sort through posts. Also, users can create posts, comment on them, upvote, downvote, and save posts. In addition, users can join a channel and create channels that will function as communities. Users can view posts, view channels detail, view all channel, search and sort posts without logging in. However, to create posts, comment on them, vote and save posts, users are required to login. Moreover, users have to log in to view profile dashboard, delete account and update account. This application will allow people to easily voice their opinion or share a story. People can easily ask questions and others can answer them. It will also provide a user-friendly interface and fast response time while maintaining high throughput. 
 
 ### Who would be interested in this application?
-Users could be anyone who is interested in forming a community online, and interact with people with similar interests. Users can keep up to date with news, information, and ideas in their community. Companies and organizations can use Seenit to communicate with people and market products.
+Users could be anyone who is interested in forming a community online, and interact with people with similar interests. Users can keep up to date with the daily life of others in their community. Companies and organizations can use Seenit to communicate with people and market products.
 
 ## System Enviroment
 #### Structure of the system (graph based on 3-tiered architecture):
@@ -66,7 +66,7 @@ Users could be anyone who is interested in forming a community online, and inter
 ## Functional Requirements
 
 ### How users will interact with the system:
-The application provides the same functionality for all the users. Internet connection is required for any activity on the system. A user shall be able to access the system for read and write. A user can access the system home page freely. They shall be able to read daily news and posts from various websites without logging in. Users can also be able to make a search based on their particular interests. However, users must log-in into the system and have their credentials checked for other activities such as make a new post, comment on a post, share a post, create a channel, and follow another channel. First-time users must register for an account to perform the activities listed under log-in. 
+The application provides the same functionality for all the users. Internet connection is required for any activity on the system. A user shall be able to access the system for read and write. However, users must log-in into the system and have their credentials checked for other activities such as make a new post, comment on a post, share a post, create a channel, and follow another channel. First-time users must register for an account to perform the activities listed under log-in. 
 
 ### Describe each individual function, functional process and I/O:
 ### Functions
@@ -85,8 +85,10 @@ The application provides the same functionality for all the users. Internet conn
 + User can active the function simply by selecting from a sort drop down menu 
 
 #### View a post
++ By clicking on any post, users shall be able to see its contents and all the comments associated with it.
 
 #### View a channel details
++ By clicking on a channel under Top channel, users shall be able to see all the post on this channel. Especially, users can see the moderator and channel details which including name of the channel and number of members.
 
 #### View all channels
 
@@ -94,19 +96,20 @@ The application provides the same functionality for all the users. Internet conn
 
 #### Log-in
 + Returning users must sign-in to perform the following activities: 
-	+ create chanel
-	+ access profile page
-	+ create a new post
-	+ like or comment on someone else's posts
+	+ View profile dashboard
+	+ update the account
+	+ Create a channel
+	+ Join a channel
+	+ Comment on a post
 	+ save a post
-	+ join channel
-+ Guests or unregistered users can only search posts, sort posts on the main page, view a channel, and view posts.
+	+ vote someone else's posts
+	+ delete an account
++ To log in, users must enter their username or email and their password.
 + The system shall check the users' credentials. If the entered information is not matching with the information stored in database, an error message will be displayed. Otherwise, the system gives users access when the information is matching.
 
 #### Register for an account
 + There will be only one type of user; no admin account in this application. First time user must sign up for an account to perform those activities listed in log-in function
-+ There will be a redirect link. User will be asked to fill out some information such as first name, last name, email address, username, and password. 
-+ No limitation. Users can set up multiple accounts and choose which one to log-in with depending on the personal channel which users want to participate in. 
++ There will be a redirect link. User will be asked to fill out some information such as username, email address and password.
 + The system shall check if entered username is already existed. The system shall keep asking the users to enter a username until the name is available. Then, the system shall add the users' personal information into database.
 
 #### III. LOG-IN IS REQUIRED FOR THESE FUNCTIONS
