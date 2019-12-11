@@ -170,6 +170,10 @@ There are many design principles when it comes to web design. For our website, w
 + White Space and Clean Design: Website without white/blank space is hard to navigate. So, we will use white space to divide the components, boxes that have different functions.
   
 ### Security
++ User accounts need to be highly protected. We don't want their personal information leaked or hacked.
++ Passwords are not stored in blank text. During user registration, passwords are hashed and salted using BCrypt before storing in the database. During login, the hashed passwords are compared
++ Sessions are handled with JWT (JSON Web Tokens). When users log in, they are given a JWT to send for future requests. The backend uses the JWT Signature to see if the JWT is valid. The JWT Signature makes it more difficult for a malicious user to pretend to be some other user.
+
 
 ### Access Control
 + Anyone with internet can access the website
