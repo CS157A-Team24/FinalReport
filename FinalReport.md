@@ -157,8 +157,6 @@ The application provides the same functionality for all the users. Internet conn
 
 #### Downvote
 
-#### Delete
-
 ## Non-functional Issues
 ### Graphical User Interface (GUI): 
 There are many design principles when it comes to web design. For our website, we will use seven most popular principles, which are Visual Hierarchy, Divine Proportions, Hick's Law, Fitt's Law, Rule of Thirds, Gestalt Design Laws, and White Space and Clean Design.
