@@ -127,11 +127,6 @@ The application provides the same functionality for all the users. Internet conn
 + They can also check the upvoted and downvoted posts as well as their saved posts. 
 + Any change in the database, for instance, comments added to a post and upvoted or downvoted are made, will be updated in the profile dashboard.
 
-#### Setting
-+ Users shall be able to update the email.
-+ Users shall be able to update the password.
-+ Users shall be able to delete an account.
-
 #### Join a channel
 + Without logging in, users will get a message syaing that they need to log in to join a channel.
 + The users shall be able to join a channel that they are interested in. 
