@@ -127,11 +127,6 @@ The application provides the same functionality for all the users. Internet conn
 + They can also check the upvoted and downvoted posts as well as their saved posts. 
 + Any change in the database, for instance, comments added to a post and upvoted or downvoted are made, will be updated in the profile dashboard.
 
-#### Setting
-+ Users shall be able to update the email.
-+ Users shall be able to update the password.
-+ Users shall be able to delete an account.
-
 #### Join a channel
 + Without logging in, users will get a message syaing that they need to log in to join a channel.
 + The users shall be able to join a channel that they are interested in. 
@@ -170,6 +165,10 @@ There are many design principles when it comes to web design. For our website, w
 + White Space and Clean Design: Website without white/blank space is hard to navigate. So, we will use white space to divide the components, boxes that have different functions.
   
 ### Security
++ User accounts need to be highly protected. We don't want their personal information leaked or hacked.
++ Passwords are not stored in blank text. During user registration, passwords are hashed and salted using BCrypt before storing in the database. During login, the hashed passwords are compared
++ Sessions are handled with JWT (JSON Web Tokens). When users log in, they are given a JWT to send for future requests. The backend uses the JWT Signature to see if the JWT is valid. The JWT Signature makes it more difficult for a malicious user to pretend to be some other user.
+
 
 ### Access Control
 + Anyone with internet can access the website
@@ -237,6 +236,13 @@ Relationships:
 # Implementation
 
 ### Detail explanations of how your DB application system was implemented.
+We have the front-end handled by React framework. With React, we just need to know the basics of HTML and CSS. There are a few css libraries that we use such as Material-UI and styled-components. These libraries help us build a better dynamic and responsive UI. At the front-end, we also use Redux for state management. One of the hardest parts in building the front end is state management. There is a lot of overhead when using Redux, but without Redux, when the app getting bigger, it will be super hard to be maintained. To communicate with the backend, the front-end will use fetch() function, which supports all the HTTP methods. We use Spring Boot to build our Rest API, which will handle all the logics and communicate to MySQL database. To connect with MySQL, we just need to add the connector dependency to the Pom file. Working with MySQL using Object mapping created a big overhead. There are not many tutorials on mapping Java class to tables. I spent a few weeks just to do research on mapping. This part is the hardest part when building our backend. The end result is great because it super simple to query and modify the database. We can treat tables like classes. All the mapped classes are in the “model” folder. We don’t need to create a model for a relationship that doesn’t have extra attributes. For database manipulation, we use JPA Data framework, which support both native SQL query and JPQL query. To do that we just need to create an interface that extended JpaRepository interface and inject a @Repotory Bean to the interface. If we want to get all posts from Post table using JPQL, we can do:
+```bash
+@Query(“SELECT p FROM Post”)
+List<Post> findAllPostCustom();
+```
+The syntax is really similar with native SQL. To write out endpoints, we inject @RestController Bean to our classes. To write a GET request, we inject @GetMapping(<url name>) and to write Post request, we do @PostMapping(<url name>). The syntaxes will be similar for DELETE, and PUT. With Spring Boot, creating endpoints is really simple and quick. We also add security to our backend using spring-boot-starter-security library. 
+
 
 ### Keep tracks of implementations from design
  
@@ -245,9 +251,91 @@ Relationships:
 + Show functions/features associated with query, insertion, updating, and deletion operations. (Screenshots)
 
 + Procedures (step by step) of how to set up and run your system
+<h1 align="center">
+  <br>
+  <br>
+    Seenit 
+  <br>
+</h1>
+
+<h4 align="center">A Reddit clone using <a href="https://reactjs.org/" target="_blank">React</a>, <a href="https://spring.io/" target="_blank">Spring Boot</a>
+and <a href="https://www.mysql.com/" target="_blank">MySQL</a></h4>
+
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-try-locally">How to Try</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">License</a>
+</p>
+
+
+## Key Features 
+
+## How To Try Locally
+
+### Requirements:
++ [Git](https://git-scm.com)
++ [Node.js (version >=10.0.0)](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))
++ JDK (version >=1.8)
++ Maven (version >=3.2)
++ Spring-2.1.8 RELEASE
++ MySQL (version >=5.1.47) 
+  
+**If you use an approriate IDE, you dont need to manually install Maven and Spring.** 
+
+**From your command line:**
+
+```bash
+# Clone this repository
+$ git clone https://github.com/CS157A-Team24/Seenit
+$ cd Seenit
+```
+**Client side**
+```bash
+# Go into the client repository
+$ cd client
+
+# Install dependencies
+$ npm install or yarn install
+
+# Run the app
+$ npm start or yarn start
+```
+In case the website doesn't automatically pop up, go to http://localhost:3000/
+
+
+**Server side**
+
+Simply use an IDE such as IntelliJ and NetBeans, import/open the project and hit "run" or if you refer command line:
+```bash
+# Go into the server repository
+$ cd server
+
+# Compile and run
+$ mvn spring-boot:run
+```
+Default port at http://localhost:8080/. Configurate the *application.properties* file to match your MySQL server address if it isn't at localhost:3306. 
+Note: You can use our public database server which is already setup, so you don’t need to modify anything
+
+**Database**
+
+Start your MySQL server. Create the Databse and Tables using the SQL files in *database* foler. 
+
+## Credits
+
+This software uses the following open source packages:
+
+- [Node.js](https://nodejs.org/)
+- [React](https://reactjs.org/)
+- [Spring Boot](https://spring.io/)
+
+## License
+
 
 # Project Conclusion
 
 ### Statements from each team member about Lesson Learned from this DB project
+
+Viet Dinh: I have built many web applications using React, but not Redux. I tried Redux before but had never built something the size of our project. After finished our project, I have more confidence to use Redux and I really like it. Debugging the state of React using Redux is amazing. This is my first time using Spring Boot, the reason why I chose Spring Boot is because I did some research and found out it really simple to work with SQL databases. Although it has a lot of overhead to map classes to tables when there is a relationship that has extra attributes, it really simple to communicate with database from there. I learn to build a better Rest API using Spring Boot that can store data to a database server. The important lessons I learned from this class are how to use MySQL database, design and manage database.
 
 ### Future improvement of your DB application
