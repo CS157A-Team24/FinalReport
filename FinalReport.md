@@ -235,28 +235,24 @@ Relationships:
 + Have_Com: has comment_id1 (parent) and comment_id2 (child). Stores which comments have which comment replies
 
 ### Perform the normalization process, and perfect the relational database schemas to BCNF
-The schemas are already in BCNF. For all relations, the left-hand side of all projected functional dependencies are superkeys
-Format: <relation>: <projected functional dependencies>
-Entity sets:
-Users(id, email, username, password, created_at, avartar_url): id → username, password, email, created_at, avatar_url; username and email also determine all other Users attributes
-Posts(id, title, content, created_at, updated_at): id → title, content, created_at, updated_at
-Comments(id, content, created_at, updated_at): id → content, created_at, updated_at
-Channels(id, name, banner_url): id → name, banner_url
-Create_Post(user_id, post_id, points): post_id → user_id, points
-Create_Com(user_id, com_id,points): com_id → user_id, points
-Have(post_id, com_id): none
-Have_Com(parent_id, child_id): none
-Save(user_id, post_id): none
-Vote_Post(user_id, post_id, up_down): none
-Vote_Com(user_id, com_id, up_down): none
-Contain(post_id, channel_id): post_id → channel_id
-Own(user_id, channel_id): channel_id → user_id
-Moderate(user_id, channel_id): none
-Subscribe(user_id, channel_id): none
-
-
-
-
++ The schemas are already in BCNF. For all relations, the left-hand side of all projected functional dependencies are superkeys
++ Format: relation: projected functional dependencies
++ Entity sets:
++ Users(id, email, username, password, created_at, avartar_url): id → username, password, email, created_at, avatar_url; username and email also determine all other Users attributes
++ Posts(id, title, content, created_at, updated_at): id → title, content, created_at, updated_at
++ Comments(id, content, created_at, updated_at): id → content, created_at, updated_at
++ Channels(id, name, banner_url): id → name, banner_url
++ Create_Post(user_id, post_id, points): post_id → user_id, points
++ Create_Com(user_id, com_id,points): com_id → user_id, points
++ Have(post_id, com_id): none
++ Have_Com(parent_id, child_id): none
++ Save(user_id, post_id): none
++ Vote_Post(user_id, post_id, up_down): none
++ Vote_Com(user_id, com_id, up_down): none
++ Contain(post_id, channel_id): post_id → channel_id
++ Own(user_id, channel_id): channel_id → user_id
++ Moderate(user_id, channel_id): none
++ Subscribe(user_id, channel_id): none
 
 ### Create and show at least 10 tables according to schemas and model the data stored in the database (Each table must contains at least 15 tuple instances.) 
 
