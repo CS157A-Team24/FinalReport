@@ -40,7 +40,7 @@
 ## Project Description
 
 ### Overview:
-The goal of this application is to create a rating site and discussion website. Users can be able to search and sort through posts. Also, users can create posts, comment on them, upvote, downvote, and save posts. In addition, users can join a channel and create channels that will function as communities. Users can view posts, view channels detail, view all channel, search and sort posts without logging in. However, to create posts, comment on them, vote and save posts, users are required to login. Moreover, users have to log in to view profile dashboard, delete account and update account. This application will allow people to easily voice their opinion or share a story. People can easily ask questions and others can answer them. It will also provide a user-friendly interface and fast response time while maintaining high throughput. 
+The goal of this application is to create a rating site and discussion website. Users can be able to search and sort through posts. Also, users can create posts, comment on them, upvote, downvote, and save posts. In addition, users can join a channel and create channels that will function as communities. Users can view posts, view channels detail, view all channel, search and sort posts without logging in. However, to create posts, comment on them, vote and save posts, users are required to login. Moreover, users have to log in to view profile dashboard, delete account and update account. This application will allow people to easily voice their opinion or share a story. People can easily ask questions and others can answer them. It will also provide a user-friendly interface and fast response time while maintaining high throughput.
 
 ### Who would be interested in this application?
 Users could be anyone who is interested in forming a community online, and interact with people with similar interests. Users can keep up to date with the daily life of others in their community. Companies and organizations can use Seenit to communicate with people and market products.
@@ -58,6 +58,8 @@ Users could be anyone who is interested in forming a community online, and inter
 + Windows/macOS
 + MySQL Workbench
 + Visual Studio Code
++ Slack
++ Github
   
 #### RDBMS Used:
 + MySQL Version 5.6
@@ -71,7 +73,7 @@ Users could be anyone who is interested in forming a community online, and inter
 ## Functional Requirements
 
 ### How users will interact with the system:
-The application provides the same functionality for all the users. Internet connection is required for any activity on the system. A user shall be able to access the system for read and write. However, users must log-in into the system and have their credentials checked for other activities such as make a new post, comment on a post, share a post, create a channel, and follow another channel. First-time users must register for an account to perform the activities listed under log-in. 
+The application provides the same functionality for all the users. Internet connection is required for any activity on the system. A user shall be able to access the system for read and write. A user can access the system home page freely. They shall be able to read daily news and posts from various websites without logging in. Users can also be able to make a search based on their particular interests. However, users must log-in into the system and have their credentials checked for other activities such as make a new post, comment on a post, share a post and join another channel. First-time users must register for an account to perform the activities listed under log-in.
 
 ### Describe each individual function, functional process and I/O:
 ### Functions
@@ -113,9 +115,10 @@ The application provides the same functionality for all the users. Internet conn
 + The system shall check the users' credentials. If the entered information is not matching with the information stored in database, an error message will be displayed. Otherwise, the system gives users access when the information is matching.
 
 #### Register for an account
-+ There will be only one type of user; no admin account in this application. First time user must sign up for an account to perform those activities listed in log-in function
++ There will be only one type of user; no admin account in this application. First time user must sign up for an account to perform those activities listed in log-in function.
 + There will be a redirect link. User will be asked to fill out some information such as username, email address and password.
 + The system shall check if entered username is already existed. The system shall keep asking the users to enter a username until the name is available. Then, the system shall add the users' personal information into database.
++ The system shall check if entered email is already existed.
 
 #### III. LOG-IN IS REQUIRED FOR THESE FUNCTIONS
 
@@ -128,11 +131,6 @@ The application provides the same functionality for all the users. Internet conn
 + Users shall be able to update the email.
 + Users shall be able to update the password.
 + Users shall be able to delete an account.
-
-#### Create a channel 
-+ Once users are signed in, users can create their own channels. On their channel, users are able to 
-+ Users can create multiple channels (up to 4). By creating a channel, a user can get followers who are interested in his/her activities.
-+ The system shall save information of the channel in database.
 
 #### Join a channel
 + Without logging in, users will get a message syaing that they need to log in to join a channel.
@@ -163,21 +161,18 @@ The application provides the same functionality for all the users. Internet conn
 
 ## Non-functional Issues
 ### Graphical User Interface (GUI): 
-There are many design principles when it comes to web design. For our website, we will use seven most popular principles, which are Visual Hierachy, Divine Proportions, Hick's Law, Fitt's Law, Rule of Thirds, Gestalt Design Laws, and White Space and Clean Design.
+There are many design principles when it comes to web design. For our website, we will use seven most popular principles, which are Visual Hierarchy, Divine Proportions, Hick's Law, Fitt's Law, Rule of Thirds, Gestalt Design Laws, and White Space and Clean Design.
 
-+ Visual Hierachy: Certain parts of our website will be more important than others. We want to make those parts easily been seen and noticed by users. For examples the account button, the scrolling posts, the filters, and the search box.
++ Visual Hierarchy: Certain parts of our website will be more important than others. We want to make those parts easily been seen and noticed by users. For example the account button, the scrolling posts, the filters, and the search box.
 + Divine Proportions: The layout, the size of each components should follow the golden ratio which is 1.618. For example, if the layout width is 1200px, the width of the content area should be 742px.
-+ Hick's Law: "Hick’s Law says that with every additional choice increases the time required to take a decision." So, we plan to minimum the options for dropdown menu buttons. This will encourage new users tring new functions. 
++ Hick's Law: "Hick’s Law says that with every additional choice increases the time required to take a decision." So, we plan to minimize the options for dropdown menu buttons. This will encourage new users trying new functions.
 + Fitt't Law: Button's size needs to follow a set of rules. The size of the button is proportion to its using-frequency.
-+ Rule of Thirds: Since our website will allow users to upload pictures. The size of a picture needs to follow the rule of thirds to make it more interesting. 
-+ Gestalt Design Laws: Filter buttons, sorting buttons will be grouped together. Buttons will have consistent sizes. 
-+ White Space and Clean Design: Website without white/blank space is hard to navigate. So, we will use white space to divide the components, boxes that have different functions. 
++ Rule of Thirds: Since our website will allow users to upload pictures. The size of a picture needs to follow the rule of thirds to make it more interesting.
++ Gestalt Design Laws: Filter buttons, sorting buttons will be grouped together. Buttons will have consistent sizes.
++ White Space and Clean Design: Website without white/blank space is hard to navigate. So, we will use white space to divide the components, boxes that have different functions.
   
 ### Security
-+ User accounts need to be highly protected. We don't want their personal information leaked or hacked. 
-+ Passwords won't be store in blank text, it will be hashed. 
-+ We will use https protocol for our web server to make sure the connection between users and server are encrypted. 
-  
+
 ### Access Control
 + Anyone with internet can access the website
 + A user will be able to view posts/channels and search without logging in
@@ -188,11 +183,9 @@ There are many design principles when it comes to web design. For our website, w
 + Fast response time while maintaining high throughput
 + The MySQL database will be optimized so queries don't take too long. The right data types and efficient SQL queries will make the database accesses faster and the database size smaller
 + ReactJS will be used to build the User Interface. ReactJS will allow the user to navigate through the application quickly by dynamically changing the current page instead of loading a whole new page from the server
-+ NGINX can be used as a load balancer but it will require money for more resources like computers and databases. We won't use many resources during this semester, but this makes it  scalable for later
   
 ### Scalability
 + Able to add new functions and features while developing the app
-+ NGINX will be used on the web server. NGINX can be used as a load balancer to distribute the work over many computers. Load balancing will help create high throughput and low response time by avoiding overloading a single computer. NGINX will allow more computing resources (CPU and memory) to be easily added to the existing system.
 
 # Project Design
 
